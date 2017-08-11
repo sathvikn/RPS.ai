@@ -26,6 +26,17 @@ test = {
       'code' : r"""
       	>>> trials = 1000
         >>> wins = 0
+        >>>def deterministic_list(lst):
+        ...deterministic_order = lst
+        ...length_of_sequence = len(deterministic_order)
+        ...index = 0
+        ...def generate_deterministic_move():
+          ...nonlocal index
+          ...value = deterministic_order[index % length_of_sequence]
+          ...index += 1
+          ...return value
+        ...return generate_deterministic_move
+
         >>> for _ in range(trials):
             ... test_length = random.randint(2, 10)
             ... test_list = [random.randint(0, 2) for _ in range(test_length)]
