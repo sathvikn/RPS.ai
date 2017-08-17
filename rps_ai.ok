@@ -1,0 +1,18 @@
+{
+    "name": "RPS.ai",
+    "endpoint": "paradigm/shift/sp16/RPS",
+    "src": [
+        "agents.py"
+    ],
+    "tests": {
+        "tests/*.py": "ok_test"
+    },
+    "protocols": [
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "collaborate",
+        "backup"
+    ]
+}
