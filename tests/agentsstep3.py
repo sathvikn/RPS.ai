@@ -1,22 +1,25 @@
 test = {
-	'name': 'deterministic strategy',
-	'suites': [
-	{ 
-	'cases' : [
-	{
-		'code': r"""
-        >>> strat = agents.deterministic_strategy()
-        >>> deterministic_order = [0, 1, 2, 1, 0]
-        >>> simple_test_results = []
-        >>> for _ in range(len(deterministic_order)):
-            ... simple_test_results.append(strat())
-        >>> assert simple_test_results == deterministic_order, "Failed simple test"
-        """
-      },]
+  'name': 'deterministic_strategy',
+  'points': 0,
+  'suites': [
+    {
       'cases': [
-      {
-      	'code' : r"""
-        >>> for _ in range(10000):
+        {
+          'code': r"""
+	        >>> strat = agents.deterministic_strategy()
+            >>> deterministic_order = [0, 1, 2, 1, 0]
+            >>> simple_test_results = []
+            >>> for _ in range(len(deterministic_order)):
+                ... simple_test_results.append(strat())
+            >>> assert simple_test_results == deterministic_order, "Failed simple test"
+	        """,
+          'hidden': False,
+          'locked': False
+        },
+        
+        {
+          'code': r"""
+			>>> for _ in range(10000):
             ... random_test_results = []
             ... strategy = agents.deterministic_strategy()
             ... turns = random.randint(1, 1000)
@@ -25,10 +28,17 @@ test = {
             ...... answer = deterministic_order * (turns // len(deterministic_order))
             ... for i in range(turns - len(answer)):
             ...... answer.append(deterministic_order[i])
-
             ... assert answer == random_test_results, "Deterministic strategy does not match expected output"
-            """
-      }]
-	}
-	]
+	        """,
+          'hidden': False,
+          'locked': False
+        }
+        
+      ],
+      'scored': True,
+      'setup': '',
+      'teardown': '',
+      'type': 'doctest'
+    }
+  ]
 }
