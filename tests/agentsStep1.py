@@ -6,12 +6,12 @@ test = {
       'cases': [
         {
           'code': r"""
-	        >>> always_rock = agents.biased_strategy(1, 0);
-	        >>> always_paper = agents.biased_strategy(1, 1);
-	        >>> always_scissors = agents.biased_strategy(1, 2);
-	        >>> assert Simulator.simulator(agents.rock_strategy, always_rock, simulation_count = 1000, silent = True) == (0, 0, 1), "Simulation Failed: biased_strategy(1, 0) does not always return rock";
-	        >>> assert Simulator.simulator(agents.paper_strategy, always_paper, simulation_count = 1000, silent = True) == (0, 0, 1), "Simulation Failed: biased_strategy(1, 0) does not always return paper";
-	        >>> assert Simulator.simulator(agents.scissors_strategy, always_scissors, simulation_count = 1000, silent = True) == (0, 0, 1), "Simulation Failed: biased_strategy(1, 0) does not always return scissors";
+  	        >>> always_rock = agents.biased_strategy(1, 0);
+  	        >>> always_paper = agents.biased_strategy(1, 1);
+  	        >>> always_scissors = agents.biased_strategy(1, 2);
+  	        >>> assert Simulator.simulator(agents.rock_strategy, always_rock, simulation_count = 1000, silent = True) == (0, 0, 1), "Simulation Failed: biased_strategy(1, 0) does not always return rock";
+  	        >>> assert Simulator.simulator(agents.paper_strategy, always_paper, simulation_count = 1000, silent = True) == (0, 0, 1), "Simulation Failed: biased_strategy(1, 0) does not always return paper";
+  	        >>> assert Simulator.simulator(agents.scissors_strategy, always_scissors, simulation_count = 1000, silent = True) == (0, 0, 1), "Simulation Failed: biased_strategy(1, 0) does not always return scissors";
 	        """,
           'hidden': False,
           'locked': False
@@ -19,7 +19,7 @@ test = {
         
         {
           'code': r"""
-			>>> never_rock = agents.biased_strategy(0, 0);
+			      >>> never_rock = agents.biased_strategy(0, 0);
             >>> never_paper = agents.biased_strategy(0, 1);
             >>> never_scissors = agents.biased_strategy(0, 2);
             
