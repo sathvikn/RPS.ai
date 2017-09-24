@@ -229,6 +229,7 @@ def reflexive_strategy():
     else: 
         opponent_strat = triple_biased_strategy(rock_freq, paper_freq, scissor_freq)
         return counter(opponent_strat())
+
 def incorrect_reflexive():
     rock_freq, paper_freq, scissor_freq = history.get_opponent_frequency(reflexive_strategy)
     if rock_freq + paper_freq + scissor_freq == 0:
