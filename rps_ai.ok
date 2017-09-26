@@ -2,7 +2,8 @@
     "name": "RPS.ai",
     "endpoint": "paradigm/shift/sp16/RPS",
     "src": [
-        "agents.py"
+        "agents.py",
+        "starter_RPS.py"
     ],
     "tests": {
         "tests/*.py": "ok_test"

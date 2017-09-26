@@ -110,7 +110,6 @@ def simple_strategy():
 
 def biased_strategy(bias, biased_move):
     """
-
     bias: a number between 0 and 1, denoting the percentage of the time the biased_move is played
     biased_move: a number between 0 and 2, inclusive, signifiying which move the strategy should be biased towards
     @Return: a function that can be called by the simulator
@@ -166,9 +165,9 @@ def triple_biased_strategy(rock_bias, paper_bias, scissor_bias):
 
     def generate_biased_move():
         generated = int(random.random() * range_size)
-        if generated >= 0 and generated <= (rock_bias * range_size):
+        if generated < rock_bias*range_size:
             return 0
-        elif generated > rock_bias and generated <= ((rock_bias * range_size) + (paper_bias * range_size)):
+        elif generated < rock_bias*range_size + paper_bias * range_size:
             return 1
         else:
             return 2
